@@ -1,0 +1,101 @@
+body {
+    background-color: #3C175A;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    height: 100%!important;
+}
+
+.container {
+    padding-top: 5%;
+}
+
+.row {
+    margin-bottom: 5px !important;
+}
+
+.col {
+    padding: 0 !important;
+}
+
+.bottom-margin {
+    margin-bottom: 5px;
+}
+
+.content {
+    padding: 20px;
+    border-radius: 2px;
+    background-color: rgb(79, 13, 133);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.middle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.spinner-red, .spinner-red-only {
+    border-color: #f50057 !important;
+}
+
+.row .col {
+    padding: 0 .25rem;
+}
+
+/* team image */
+.img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Tabs */
+
+.tabs {
+    background-color: rgb(79, 13, 133) !important;
+}
+
+.tabs .tab a {
+    color: #ffffff !important;
+}
+
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a.active {
+    background-color: #f50057 !important;
+    color: #ffffff !important;
+}
+
+/* Chip */
+
+.chip-container {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.chip {
+    background-color: #f50057 !important;
+    color: #ffffff !important;
+}
+
+/* remove tr border */
+.tr-border {
+    border-bottom: 0 !important;
+}
+
+/* left align td */
+.td-left {
+    text-align: left !important;
+}
+
+.td-right {
+    text-align: right !important;
+}
