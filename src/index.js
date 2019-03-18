@@ -6,7 +6,7 @@ import { rename, status, matchDate } from './components/display';
 (function () {
     Promise.all([
         /** get all standings */
-        fetch('https://api.football-data.org/v2/competitions/2021/standings', { headers: { 'X-Auth-Token': 'a;i key' } }).then(response => response.json()),
+        fetch('https://api.football-data.org/v2/competitions/2021/standings', { headers: { 'X-Auth-Token': 'api key' } }).then(response => response.json()),
         /** get all matches */
         fetch('https://api.football-data.org/v2/competitions/2021/matches', { headers: { 'X-Auth-Token': 'api key' } }).then(response => response.json())
     ])
