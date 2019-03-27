@@ -1,3 +1,6 @@
+import { isToday, isTomorrow, matchTime } from './date';
+
+/** A function to shorten and prepare teams names */
 export function rename(str) {
     let name = str.includes('FC') ? str.replace("FC", "") : str;
     if (name.includes("Brighton")) {
@@ -19,29 +22,45 @@ export function rename(str) {
     }
 }
 
-export function status(status) {
-    switch (status) {
-        case "FINISHED": return "Finished";
-        case "SCHEDULED": return "Scheduled";
-        case "LIVE": return "Live";
-        case "IN_PLAY": return "Live";
-        case "PAUSED": return "Live";
-        case "POSTPONED": return "Postponed";
-        case "SUSPENDED": return "Suspended";
-        case "CANCELED": return "Canceled";
-        default: return "Scheduled";
+/** function to prepare the header grouping the matches */
+export function header(str) {
+    if (isToday(str)) {
+        str = 'Today';
+    } else if (isTomorrow(str)){
+        str = 'Tomorrow'
     }
+    return `
+        <div class="col s12 date text-center">
+            <span class="date-header">${str}</span>
+        </div>
+    `
 }
 
-export function matchDate(utcDate) {
-    let day = utcDate.slice(8, 10);
-    let month = utcDate.slice(5, 7);
-    let year = utcDate.slice(0, 4);
-    return `${day}-${month}-${year}`;
-}
-
-export function matchTime(utcDate){
-    let houre = utcDate.slice(11, 13);
-    let minutes = utcDate.slice(14, 16);
-    return `${houre}:${minutes}`;
+/** function to display the matches */
+export function render(match) {
+    let score = '';
+    if (match.score.fullTime.homeTeam == null) {
+        score = `
+        <div class="score col s2">
+            <span>${matchTime(match.utcDate)}</span>
+        </div>
+        `
+    } else {
+        score = `
+        <div class="score col s2">
+            <span>${match.score.fullTime.homeTeam}</span>
+            <span>:</span>
+            <span>${match.score.fullTime.awayTeam}</span>
+        </div>
+        `
+    }
+    return `
+        <div id="${match.status}" class="match col s12">
+            <div class="col s3 text-right">${rename(match.homeTeam.name)}</div>
+            <div class="col s2 text-center"><img class="match-img" src="images/${match.homeTeam.id}.png"></div>
+            ${score}
+            <div class="col s2 text-center"><img class="match-img" src="images/${match.awayTeam.id}.png"></div>
+            <div class="col s3 text-left">${rename(match.awayTeam.name)}</div>
+        </div>
+    `
 }
