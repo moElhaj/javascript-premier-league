@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Codex</title>
+    <title>Kora</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
@@ -14,60 +14,47 @@
 <body>
 
     <div class="container">
-        <div id="loader" class="middle">
-            <div class="preloader-wrapper small active">
-                <div class="spinner-layer spinner-red-only">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="loader-div middle">
+            <div class="loader"></div>
         </div>
-        <div id="wrapper" class="hide">
+
+        <div class="wrapper hide">
             <div class="row">
                 <div class="col s12">
-                    <div class="row">
-                        <div class="col s12">
-                            <ul class="tabs">
-                                <li class="tab col s6"><a href="#matches">Matches</a></li>
-                                <li class="tab col s6"><a href="#standings">Standings</a></li>
-                            </ul>
+                    <ul class="tabs">
+                        <li class="tab col s6"><a href="#matches">Matches</a></li>
+                        <li class="tab col s6"><a href="#standings">Standings</a></li>
+                    </ul>
+                </div>
+                <div id="matches" class="col s12">
+                    <div class="content">
+                        <div class="matches text-center row">
                         </div>
-                        <div id="matches" class="col s12">
-                            <div class="content">
-                                <div id="matchesContent"></div>
-                            </div>
-                        </div>
-                        <div id="standings" class="col s12">
-                            <div class="content">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th colspan="3">Club</th>
-                                            <th>MP</th>
-                                            <th>W</th>
-                                            <th>D</th>
-                                            <th>L</th>
-                                            <th>Pts</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="standingsContent"></tbody>
-                                </table>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                <div id="standings" class="col s12">
+                    <div class="content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Club</th>
+                                    <th>P</th>
+                                    <th>W</th>
+                                    <th>D</th>
+                                    <th>L</th>
+                                    <th>Pts</th>
+                                </tr>
+                            </thead>
+                            <tbody id="standingsContent"></tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="error" class="middle center-align hide">
-        <h4>Oh Snap !!</h4>
+
+    <div class="error middle text-center hide">
+        <h3>Oh Snap !!</h3>
         <p>There was an error loading data, try to refresh the page</p>
     </div>
 
