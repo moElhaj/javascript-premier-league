@@ -5,7 +5,7 @@ export function isToday(date) {
     let month = today.getMonth() + 1;
     month = month < 10 ? `0${month}` : month;
     let year = today.getFullYear();
-    let todaysDate = `${year}-${month}-${day}`;
+    let todaysDate = `${day}-${month}-${year}`;
     if (date == todaysDate) {
         return true;
     } else {
@@ -22,7 +22,7 @@ export function isTomorrow(date) {
     let month = today.getMonth() + 1;
     month = month < 10 ? `0${month}` : month;
     let year = today.getFullYear();
-    let tomorrowsDate = `${year}-${month}-${day}`;
+    let tomorrowsDate = `${day}-${month}-${year}`;
     if (date == tomorrowsDate) {
         return true;
     } else {
