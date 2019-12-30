@@ -1,7 +1,5 @@
 <h3>Premier League</h3>
 
-<a href="https://kora-codex.000webhostapp.com/" target="_blank">Demo</a> 
-
 <p>How to install</p>
 <ul>
 <li>npm install</li>
